@@ -3,7 +3,7 @@
 function connectBDD(){
     
     try{
-        $bdd = new PDO("mysql:host=localhost;dbname=ppe","root","");
+        $bdd = new PDO("mysql:host=localhost;dbname=Flipper","root","");
         return $bdd;
     }catch(Exception $e){
         die("erreur bdd");
