@@ -12,6 +12,8 @@ function updateall($prenom, $nom, $email, $adresse, $tel, $bio){
 	return $requete_update_all->execute();
 }
 
+
+
 function updateAvatar($avatar){
 	global $bdd;
 	$requete_update_all = $bdd->prepare("UPDATE utilisateur SET avatar = :avatar WHERE id = ".$_SESSION['id']);

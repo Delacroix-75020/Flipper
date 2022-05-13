@@ -12,7 +12,7 @@ require "core/functions.php";
 
 $bdd = connectBDD();
 
-if(isset($_GET['p']))
+if(isset($_GET['p']))   
 {   
     if(file_exists("controllers/".$_GET['p']."Controller.php"))//Verifie si la page demandée existe
         $page = $_GET['p'];
@@ -22,7 +22,6 @@ if(isset($_GET['p']))
 else{
     $page = "home";
 }
-
 
 ob_start();// arrete l'affichage
     require "controllers/".$page."Controller.php";// recuperation de la page

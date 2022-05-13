@@ -94,7 +94,7 @@
                     
                                            
                 <div class="mt-5 text-center">
-                <button button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#editprofile">Editer Profile</button></div>
+                <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#editprofile">Editer Profile</button></div>
             </div>
         </div>
         <div class="col-md-4">

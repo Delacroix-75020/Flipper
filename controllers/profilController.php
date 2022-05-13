@@ -25,7 +25,7 @@ if (isset($_POST['editutilisateur'])) {
 
 if(isset($_FILES['avataruser']) AND !empty($_FILES['avataruser']['name'])) {
    $tailleMax = 2097152;
-   $nomImage = rand(100, 100000);
+   $nomImage = rand(100, 1000000);
    $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
    if($_FILES['avataruser']['size'] <= $tailleMax) {
       $extensionUpload = strtolower(substr(strrchr($_FILES['avataruser']['name'], '.'), 1));
