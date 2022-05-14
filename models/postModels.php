@@ -28,12 +28,12 @@ function isInterested($id_user, $id_event){
 	return $nbr > 0;
 }
 
-function selectInterestByEvent(){
+/*function selectInterestByEvent($id_event){
 	global $bdd;
-	$interestByEvent = $bdd->query("SELECT interest.id_user, interest.id_event, prenom, nom from utilisateur, evenement, interest where utilisateur.id = interest.id_user AND evenement.id = interest.id_event; ");
-	$interestByEvent->execute();
-	return $interestByEvent->fetchAll();
-}
+	$interestByEvents = $bdd->query("SELECT id_user , avatar from interest, utilisateur where utilisateur.id = interest.id_user AND id_event =".$id_event);
+	$interestByEvents->execute();
+	return $interestByEvents->fetchAll();
+}*/
 
 function getAllEvent(){
 	global $bdd;

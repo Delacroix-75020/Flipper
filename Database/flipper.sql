@@ -59,13 +59,16 @@ CREATE TABLE interest (
  CONSTRAINT `interest_ibfk_2` FOREIGN KEY (`id_event`) REFERENCES `evenement` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `message` (
- `id_exp` int(11) NOT NULL,
- `id_dest` int(11) NOT NULL,
- `contenu` varchar(255) DEFAULT NULL,
- PRIMARY KEY (`id_exp`,`id_dest`),
- KEY `id_dest` (`id_dest`),
- CONSTRAINT `message_ibfk_1` FOREIGN KEY (`id_exp`) REFERENCES `utilisateur` (`id`),
- CONSTRAINT `message_ibfk_2` FOREIGN KEY (`id_dest`) REFERENCES `utilisateur` (`id`)
+CREATE TABLE message (
+ id int(11) not null AUTO_INCREMENT,
+ id_exp int(11) NOT NULL,
+ id_dest int(11) NOT NULL,
+ contenu varchar(255) DEFAULT NULL,
+ PRIMARY KEY (id,id_exp,id_dest),
+ KEY id_dest (`id_dest`),
+ CONSTRAINT message_ibfk_1 FOREIGN KEY (id_exp) REFERENCES utilisateur (id),
+ CONSTRAINT message_ibfk_2 FOREIGN KEY (id_dest) REFERENCES utilisateur (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `utilisateur` (`id`, `prenom`, `nom`, `email`, `mdp`, `adresse`, `tel`, `lien_web`, `bio`, `avatar`, `dateAdhesion`) VALUES (NULL, 'Mark', 'Spencer', 'mark@gmail.com', SHA1('Azerty123'), '8 rue de Londres', '0674661495', 'SIU', 'Je suis nouveaux sur Flipper', NULL, '2022-05-15');
+INSERT INTO `utilisateur` (`id`, `prenom`, `nom`, `email`, `mdp`, `adresse`, `tel`, `lien_web`, `bio`, `avatar`, `dateAdhesion`) VALUES (NULL, 'Lewis', 'Hamilton', 'mark@gmail.com', SHA1('Azerty123'), '8 rue de NewYork', '0786542134', 'SIU', 'Je suis le Flippos de ton Flippos préféré', NULL, '2022-05-15');

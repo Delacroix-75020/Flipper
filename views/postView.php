@@ -120,32 +120,14 @@
                                 <?php if( !isInterested($_SESSION['id'], $event['id']) ){
 
                                  ?>
-                                <button type="submit" name="postInterest" class="btn btn-primary"> ça m'intéresse ?</button>
+                                <button type="submit" name="postInterest" class="btn btn-primary"> ça m'intéresse ? </button>
                             <?php } ?>
                             </form>  
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editprofile"> Interessé(s) </button>
                             </div>
                     </div>
                 </div>
                 <br>
             <?php } ?>
-
-            <div class="modal fade" id="editprofile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Qui est interessé(s) </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nom" class="form-label">Prenom de l'utilisateur</label>
-                    </div>
-                </div>
-        </div>
-    </div>
-
-</div>
 
             </div>
             <div class="col-md-3">

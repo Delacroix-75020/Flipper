@@ -1,8 +1,8 @@
 <section class="py-5 text-center container bg">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">La Societe Filelec</h1>
-        <p class="lead text-muted">Bienvenue sur la boutique de la société Filelec spécialisée dans la ventes de piéces automobiles. vous pouvez retrouvez ci dessous et dans notre catalogues des piéces de rechanges de voitures, de camion, de bus ou encore des accessoires automobiles .</p>
+        <h1 class="fw-light">Le Réseaux Sociale Flipper</h1>
+        <p class="lead text-muted">Bienvenue sur le Réseaux Flipper de la société Corporate, Nous sommes un réseaux sociale parfait pour les jeunes gens en quête d'evenements. vous pouvez retrouvez ci dessus plusieurs fonctionnalites comme la création d'evenements ou encore une messagerie privée</p>
       </div>
     </div>
   </section>

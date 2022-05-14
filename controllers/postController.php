@@ -19,7 +19,6 @@ if (isset($_POST['postEvent'])) {
     $events = getAllEvent();
     $followeds = getFollowed();   
     $followers = getFollower();
-    $interestByEvent = selectInterestByEvent();
 
 if (isset($_POST['postInterest'])){
     $id_user = $_SESSION['id'];

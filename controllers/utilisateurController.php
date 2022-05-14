@@ -4,6 +4,7 @@
     $users = getAllUsers();
     $followeds = getFollowedUserIds($_SESSION['id']);
 
+
         if(isset($_POST['btnFollowUnfollow'])){
             if(isset($_POST['action'])){
                 $id_followed = $_POST['id_followed'];
