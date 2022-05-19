@@ -21,22 +21,22 @@
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Message de</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Contenu</th>
+                                         <th scope="col">Expéditeur</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($messagesdest as $messagedest) { ?>
                                     <tr>
                                         <td>
-                                            <?= $messagedest['id_exp']; ?>
-                                        </td>
-                                        <td>
                                             <?= $messagedest['date_envoi']; ?>
                                         </td>
                                         <td>
                                             <?= $messagedest['contenu']; ?>
+                                        </td>
+                                        <td>
+                                            <?= $messagedest['nomE']."  ".$messagedest['prenomE'] ; ?>
                                         </td>
                                     </tr>
                                     <?php } ?>
@@ -57,9 +57,9 @@
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
-                                        <th scope="col">Message a la destination de</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Contenu</th>
+                                         <th scope="col">Destinataire</th>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
@@ -67,13 +67,13 @@
                                     <?php foreach ($messagesexp as $messageexp) { ?>
                                     <tr>
                                         <td>
-                                            <?= $messageexp['id_dest']; ?>
-                                        </td>
-                                        <td>
                                             <?= $messageexp['date_envoi']; ?>
                                         </td>
                                         <td>
                                             <?= $messageexp['contenu']; ?>
+                                        </td>
+                                          <td>
+                                            <?= $messageexp['nomR']."  ".$messageexp['prenomR'] ; ?>
                                         </td>
                                         <td>
                                             <form method="post">
@@ -85,6 +85,7 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                           <br> 
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
         
 <br>
     <div class="container-fluid gedf-wrapper">
-        <div class="row">
+         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
@@ -116,31 +116,46 @@
                     <div class="card-footer">
                         <div class="btn-group">
                             <form method="post">
-                                <input type="hidden" name="id_event" value="<?= $event['id']; ?>">
+                                <input type="hidden" name="id_event" id ="id_vent" value="<?= $event['id']; ?>">
                                 <?php if( !isInterested($_SESSION['id'], $event['id']) ){
 
                                  ?>
                                 <button type="submit" name="postInterest" class="btn btn-primary"> ça m'intéresse ? </button>
-                            <?php } ?>
-                            </form>  
+                            <?php }else{
+
+                             ?>
+                            <button type="submit" name="postUninterest" class="btn btn-primary"> ça m'intéresse plus </button>
+                        <?php } ?>
+                            </form>
+                            <?php 
+                                $content = "";
+                                $tabUsers = getAllEventsUsers($event['id']);
+                                foreach($tabUsers as $tabUser){
+                                 $content = $content. $tabUser['prenom']. " ". $tabUser['nom']. "<br>";  
+                                 
+                                }
+                            ?> 
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postmodal<?= $event['id']; ?>">Small modal</button>
+                            <?php if($event['id_user'] == $_SESSION['id']){  ?>
+                            <form method="post">
+                                <input type="hidden" name="id_event" id ="id_vent" value="<?= $event['id']; ?>">
+                               <button type="submit" name="deleteEvent" onclick="return(confirm('Voulez-vous vraiment supprimer cette evenement ?'));" class="btn btn-primary"> Supprimer</button> 
+                            </form>      
+                        <?php } ?>
+                            <div class="modal fade bd-example-modal-sm" id="postmodal<?= $event['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <?php echo $content; ?>
+                                </div>
+                              </div>
+                            </div>
                             </div>
                     </div>
                 </div>
-                <br>
             <?php } ?>
-
-            </div>
-            <div class="col-md-3">
-                <div class="card gedf-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+       
+
+
+
+

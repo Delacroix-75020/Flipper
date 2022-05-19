@@ -2,14 +2,14 @@
 
 function getAllMessagesReception() {
     global $bdd;
-    $messagesdest = $bdd->query("SELECT * FROM message WHERE id_dest =".$_SESSION['id']);
+    $messagesdest = $bdd->query("SELECT * FROM messages_users WHERE id_dest =".$_SESSION['id']);
     $messagesdest->execute();
     return $messagesdest->fetchAll(); 
 }
 
 function getAllMessagesEnvoie() {
     global $bdd;
-    $messagesexp = $bdd->query("SELECT * FROM message WHERE id_exp = ".$_SESSION['id']);
+    $messagesexp = $bdd->query("SELECT * FROM messages_users WHERE id_exp = ".$_SESSION['id']);
     $messagesexp->execute();
     return $messagesexp->fetchAll(); 
 }

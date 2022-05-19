@@ -26,6 +26,28 @@ function isInterested($id_user, $id_event){
 	$result =  $Interested->fetch();
 	$nbr = $result['nbr'];
 	return $nbr > 0;
+
+}
+
+function deleteInterest($id_user, $id_event){
+	global $bdd;
+	$Interested = $bdd->query("DELETE FROM interest WHERE id_user = ".$id_user." AND id_event =".$id_event);
+	$Interested->execute();
+
+}
+
+function deleteEvent($id_event){
+	global $bdd;
+	$Interested = $bdd->query("DELETE FROM evenement WHERE id = ".$id_event.";");
+	$Interested->execute();
+
+}
+
+function getAllEventsUsers($id_event){
+	global $bdd;
+	$events = $bdd->query("SELECT * from events_users where id =".$id_event.";");
+	$events->execute();
+	return $events->fetchAll();
 }
 
 /*function selectInterestByEvent($id_event){
@@ -37,7 +59,7 @@ function isInterested($id_user, $id_event){
 
 function getAllEvent(){
 	global $bdd;
-	$events = $bdd->query("SELECT evenement.id, prenom, nom, avatar, titre, contenu, url_video, dateEvent, dateCreationEvent from utilisateur, evenement where utilisateur.id = evenement.id_user ORDER BY id DESC; ");
+	$events = $bdd->query("SELECT evenement.id, prenom, nom, avatar, titre, contenu, url_video, dateEvent, dateCreationEvent, id_user from utilisateur, evenement where utilisateur.id = evenement.id_user ORDER BY id DESC; ");
 	$events->execute();
 	return $events->fetchAll();
 }

@@ -20,11 +20,26 @@ if (isset($_POST['postEvent'])) {
     $followeds = getFollowed();   
     $followers = getFollower();
 
+
 if (isset($_POST['postInterest'])){
     $id_user = $_SESSION['id'];
     $id_event =  $_POST['id_event'];
     $requete = insertInterest($id_user, $id_event);
+
+
+}else if (isset($_POST['postUninterest'])){
+    $id_user = $_SESSION['id'];
+    $id_event =  $_POST['id_event'];
+    $requete = deleteInterest($id_user, $id_event);
 }
+
+if (isset($_POST['deleteEvent'])){
+    $id_event =  $_POST['id_event'];
+    $requete = deleteEvent($id_event);
+    header('Location: post');
+}
+
+
 
 
 
