@@ -135,7 +135,7 @@
                                  
                                 }
                             ?> 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postmodal<?= $event['id']; ?>">Small modal</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postmodal<?= $event['id']; ?>">Qui est intéressés</button>
                             <?php if($event['id_user'] == $_SESSION['id']){  ?>
                             <form method="post">
                                 <input type="hidden" name="id_event" id ="id_vent" value="<?= $event['id']; ?>">

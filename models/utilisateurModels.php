@@ -2,9 +2,16 @@
 
 function getAllUsers() {
 	global $bdd;
-	$users = $bdd->query('SELECT id, prenom, nom, email, adresse, tel, bio, avatar, dateAdhesion FROM utilisateur ORDER BY dateAdhesion DESC');
+	$users = $bdd->query('SELECT id, prenom, nom, email, adresse, tel, bio, avatar, dateAdhesion FROM utilisateur WHERE role = 0 ORDER BY dateAdhesion DESC');
 	$users->execute();
 	return $users->fetchAll();
+}
+
+function deleteUserWhere($id) {
+    global $bdd;
+    $delete = $bdd->prepare("DELETE FROM utilisateur WHERE id = :id");
+    $delete->bindValue('id', $id, PDO::PARAM_INT);
+    return $delete->execute();
 }
 
 function getFollowedUserIds($id_follower){

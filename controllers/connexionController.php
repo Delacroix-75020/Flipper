@@ -23,8 +23,8 @@ if (isset($_POST['formconnexion'])) {
                     $_SESSION['pass'] = $requete['pass'];
                     $_SESSION['avatar'] = $requete['avatar'];
                     $_SESSION['dateAdhesion'] = $requete['dateAdhesion'];
-                    $_SESSION['lvl'] = 1;
-                    header('Location: post');
+                    $_SESSION['role'] = $requete['role'];
+                    header('Location: home');
                 
             } else {
                 Alerts::setFlash("Identifiants incorrects.", "danger");
